@@ -22,8 +22,15 @@ const [first,second] = restaurant.categories;
 console.log(first, second);
 
 //if you wat to skip the second element 
-// const [first, ,second] = restaurant.categories;
-// console.log(first, second);
+let [main, ,secondary] = restaurant.categories;
+console.log(main, secondary);
+
+//reversing an array
+[main, secondary] = [secondary,main];
+console.log(main, secondary);
+
+
+
 
 
 //   openingHours: {
