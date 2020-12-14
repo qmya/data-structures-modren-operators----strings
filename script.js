@@ -20,6 +20,9 @@ const restaurant = {
       close: 24,
     },
   },
+  orderPaste: function ({ ingre1, ingre2, ingre3 }) {
+    console.log(`${ingre1}, ${ingre2}, ${ingre3}`);
+  },
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
@@ -29,6 +32,12 @@ const restaurant = {
     );
   },
 };
+const ingredients = {
+  ingre1: 'chicken',
+  ingre2: 'green chilli',
+  ingre3: 'c',
+};
+console.log(ingredients);
 
 restaurant.orderDelivery({
   time: '22:30',
