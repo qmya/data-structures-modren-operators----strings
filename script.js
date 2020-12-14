@@ -23,18 +23,19 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderDelivery: function({starterIndex,mainIndex,time,address}){
-    console.log(`Order recieved! ${this.starterMenu[starterIndex]}, ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
-  }
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order recieved! ${this.starterMenu[starterIndex]}, ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
-
 
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Toronto, Ontario',
   mainIndex: 2,
-  starterIndex:1,
-})
+  starterIndex: 1,
+});
 //Destructuring objects we use {}
 //we will write the exact name as in the object
 //no need to skip any element
@@ -101,5 +102,43 @@ console.log(i, d, r);
 
 //nested objects destructuring
 console.log(openingHours);
-const { fri: {open, close }} = openingHours;
+const {
+  fri: { open, close },
+} = openingHours;
 console.log(open, close);
+
+//Spread operators
+const arrayA = [7, 8, 9];
+const newArr = [arrayA[0], arrayA[1], arrayA[2], 10, 11, 12];
+console.log(newArr);
+//Doing the same process here with spread operator
+
+const newArrUsingSpreadOperator = [...arrayA, 10, 11, 12];
+console.log(newArrUsingSpreadOperator);
+console.log(...newArrUsingSpreadOperator); //If you want to make the elements of array seperate you can also do like this
+
+//lets add a new food item to menu of resturant object
+const newMenuAdding = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenuAdding);
+console.log(...newMenuAdding);
+
+//Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//Joining two arrays or more
+//we can use the same technique
+//Create a menu which contain the main menu and the starter menu
+
+const newMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(newMenu);
+console.log(...newMenu);
+
+//Spread operator works on all so called iterables
+//What is iterable?
+//Iterable: arrays , strings , sets but not objects
+// It means we can use Iterables on strings too
+const str = 'Qandeel';
+console.log(...str);
+const letters = [...str, '', "'s"];
+console.log(letters);
+console.log(...letters);
