@@ -23,7 +23,18 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  orderDelivery: function({starterIndex,mainIndex,time,address}){
+    console.log(`Order recieved! ${this.starterMenu[starterIndex]}, ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+  }
 };
+
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Toronto, Ontario',
+  mainIndex: 2,
+  starterIndex:1,
+})
 //Destructuring objects we use {}
 //we will write the exact name as in the object
 //no need to skip any element
