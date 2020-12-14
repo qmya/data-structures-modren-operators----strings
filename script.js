@@ -42,7 +42,12 @@ console.log(restaurantName, tags, restaurantOpeningHours);
 const { menu = [], starterMenu = (starter = []) } = restaurant;
 console.log(menu, starterMenu);
 
-
+//Mutating variable
+let f = 111;
+let g = 999;
+const obj = { f: 23, g: 27, h: 14 };
+({ f, g } = obj);
+console.log({f, g});
 
 //Without Destructuring array
 const arr = [2, 3, 4];
