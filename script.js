@@ -6,10 +6,41 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+    openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 };
+//Destructuring objects we use {}
+//we will write the exact name as in the object 
+//no need to skip any element
+let { name, categories, openingHours } = restaurant;
+console.log( name, categories, openingHours );
+
+//Assigning new name to the object elements
+let {name: restaurantName, openingHours:restaurantOpeningHours, categories: tags} = restaurant;
+console.log(restaurantName, tags, restaurantOpeningHours );
+
+
+
+
+
+
+
+
 //Without Destructuring
 const arr = [2, 3, 4];
 const a = arr[0];
