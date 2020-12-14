@@ -47,7 +47,7 @@ let f = 111;
 let g = 999;
 const obj = { f: 23, g: 27, h: 14 };
 ({ f, g } = obj);
-console.log({f, g});
+console.log({ f, g });
 
 //Without Destructuring array
 const arr = [2, 3, 4];
@@ -88,22 +88,7 @@ console.log([firstArr, secondArr]);
 const [i, , [d, r]] = nested;
 console.log(i, d, r);
 
-// //adding default values
-// const [p=1, q=1, r=1] = [8, 9];
-// console.log(p, q, r);
-
-//   openingHours: {
-//     thu: {
-//       open: 12,
-//       close: 22,
-//     },
-//     fri: {
-//       open: 11,
-//       close: 23,
-//     },
-//     sat: {
-//       open: 0, // Open 24 hours
-//       close: 24,
-//     },
-//   },
-// };
+//nested objects destructuring
+console.log(openingHours);
+const { fri: {open, close }} = openingHours;
+console.log(open, close);
