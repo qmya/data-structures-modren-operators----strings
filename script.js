@@ -6,6 +6,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
 //Without Destructuring
 const arr = [2, 3, 4];
@@ -18,16 +21,34 @@ const [x, y, z] = arr;
 console.log(x, y, z);
 
 //Destructing in the above object and its array
-const [first,second] = restaurant.categories;
+const [first, second] = restaurant.categories;
 console.log(first, second);
 
-//if you wat to skip the second element 
-let [main, ,secondary] = restaurant.categories;
+//if you wat to skip the second element
+let [main, , secondary] = restaurant.categories;
 console.log(main, secondary);
 
 //reversing an array
-[main, secondary] = [secondary,main];
+[main, secondary] = [secondary, main];
 console.log(main, secondary);
+
+//getting an array
+let [starter, mainCourse] = restaurant.order(2,0);
+console.log(starter, mainCourse);
+[starter, mainCourse] = [mainCourse, starter]
+console.log(starter,mainCourse);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
