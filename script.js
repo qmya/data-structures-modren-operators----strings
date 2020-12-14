@@ -6,7 +6,7 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    openingHours: {
+  openingHours: {
     thu: {
       open: 12,
       close: 22,
@@ -25,29 +25,32 @@ const restaurant = {
   },
 };
 //Destructuring objects we use {}
-//we will write the exact name as in the object 
+//we will write the exact name as in the object
 //no need to skip any element
 let { name, categories, openingHours } = restaurant;
-console.log( name, categories, openingHours );
+console.log(name, categories, openingHours);
 
 //Assigning new name to the object elements
-let {name: restaurantName, openingHours:restaurantOpeningHours, categories: tags} = restaurant;
-console.log(restaurantName, tags, restaurantOpeningHours );
+let {
+  name: restaurantName,
+  openingHours: restaurantOpeningHours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, tags, restaurantOpeningHours);
+
+//default values
+const { menu = [], starterMenu = (starter = []) } = restaurant;
+console.log(menu, starterMenu);
 
 
 
-
-
-
-
-
-//Without Destructuring
+//Without Destructuring array
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
 const c = arr[2];
 
-//With destructuring
+//With destructuring array
 const [x, y, z] = arr;
 console.log(x, y, z);
 
@@ -77,10 +80,10 @@ const [firstArr, , secondArr] = nested;
 console.log([firstArr, secondArr]);
 
 //do the first third whole array
-const [i, ,[d,r]] = nested;
-console.log(i,d,r);
+const [i, , [d, r]] = nested;
+console.log(i, d, r);
 
-// //adding default values 
+// //adding default values
 // const [p=1, q=1, r=1] = [8, 9];
 // console.log(p, q, r);
 
