@@ -33,26 +33,25 @@ console.log(main, secondary);
 console.log(main, secondary);
 
 //getting an array
-let [starter, mainCourse] = restaurant.order(2,0);
+let [starter, mainCourse] = restaurant.order(2, 0);
 console.log(starter, mainCourse);
-[starter, mainCourse] = [mainCourse, starter]
-console.log(starter,mainCourse);
+[starter, mainCourse] = [mainCourse, starter];
+console.log(starter, mainCourse);
 
+//Lets take it to another level
+//Nested array
+const nested = [2, 4, [5, 6]];
+//using destructuring assignments
+const [firstArr, , secondArr] = nested;
+console.log([firstArr, secondArr]);
 
+//do the first third whole array
+const [i, ,[d,r]] = nested;
+console.log(i,d,r);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// //adding default values 
+// const [p=1, q=1, r=1] = [8, 9];
+// console.log(p, q, r);
 
 //   openingHours: {
 //     thu: {
