@@ -151,3 +151,13 @@ console.log(...str);
 const letters = [...str, '', "'s"];
 console.log(letters);
 console.log(...letters);
+
+//Since ES16 the spread operators alsoworks on OBjects since objects are not iterable
+//REal world examples
+
+const newResurantObject = {
+  foundedIn: 1950,
+  ...restaurant,
+  founder: 'Qandeel',
+};
+console.log(newResurantObject);
